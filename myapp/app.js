@@ -12,12 +12,30 @@ Bonus
 3. Create una pagina statica html da cui far partire una chiamata ajax per consumare il vostro enpoint json.
 */
 const express = require("express");
-const postController = require('./Controllers/postController.js')
+const postController = require('./Controllers/postController.js');
+const posts = require("./Data/posts.js");
 const app = express();
+app.use(express.static('public'))
+
 const port = 3005;
 
 app.get('/', (req, res) => {
-    res.send('<h1>Benvenuto nel mio blog!</h1>')
+    for (let i = 0; i < posts.length; i++) {
+        const post = posts[i];
+        const {title, content, image, tags} = post
+        const markup = 
+        `<h1>Benvenuto nel mio blog!</h1>
+        <div class="col-4 pb-3>
+        <div class="post d-flex">
+        <spam>${title}</spam
+        <p>${content}</p>
+        <img src"${image} alt="photo">
+        <spam>${tags}</spam>
+        </div>
+        </div>
+        `
+        res.send(markup) 
+    }
 })
 
 app.get('/posts', postController.index)
