@@ -12,12 +12,15 @@ Bonus
 3. Create una pagina statica html da cui far partire una chiamata ajax per consumare il vostro enpoint json.
 */
 const express = require("express");
+const postController = require('./Controllers/postController.js')
 const app = express();
 const port = 3005;
 
 app.get('/', (req, res) => {
     res.send('<h1>Benvenuto nel mio blog!</h1>')
 })
+
+app.get('/posts', postController.index)
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
