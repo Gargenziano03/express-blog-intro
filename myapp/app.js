@@ -11,10 +11,6 @@ Bonus
 2. Creare una nuova rotta con cui stampare la lista in html come ul
 3. Create una pagina statica html da cui far partire una chiamata ajax per consumare il vostro enpoint json.
 */
-
-
-
-
 const express = require("express");
 const app = express();
 const port = 3005;
