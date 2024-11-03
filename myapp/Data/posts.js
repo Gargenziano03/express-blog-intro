@@ -2,7 +2,7 @@ const posts = [
     {
         title: "La bellezza della natura",
         content: "Esplora i meravigliosi paesaggi naturali che il nostro pianeta ha da offrire.",
-        image: "natura.jpg",
+        image: "download.jpg",
         tags: ["natura", "paesaggi", "avventura"]
     },
     {
